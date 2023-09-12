@@ -1,11 +1,12 @@
 """All of source code based on <Clean Code in Python>
 Chapter 3. Common Features of Good Codes
 """
+import collections
 from datetime import datetime
 from unittest import TestCase, main
 
 
-class TransactionalPolicy:
+class TransactionalPolicy(collections.UserDict):
     """Example refactored to use composition"""
     def __init__(self, policy_data, **extra_data):
         self._data = {**policy_data, **extra_data}
